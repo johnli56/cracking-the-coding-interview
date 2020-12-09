@@ -15,7 +15,7 @@ public class _01_03_URLifyTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void withInsufficientLength() {
-        s.urlify("hello world ".toCharArray(), 11);
+        s.urlify("hello world ".toCharArray(), 12);
     }
 
     @Test

@@ -12,6 +12,33 @@ package arraystring;
  */
 class _01_03_URLify {
     char[] urlify(char[] chars, int trueLength) {
-        throw new UnsupportedOperationException();
+
+        int index = 0;
+        while (index < trueLength - 1) {
+
+            if (chars[index] == ' ') {
+                // move all characters two spots over when a space is detected to make room for %20
+                chars = moveChars(chars, index);
+                chars[index] = '%';
+                chars[index + 1] = '2';
+                chars[index + 2] = '0';
+                index += 3;
+            }
+            else {
+                index += 1;
+            }
+            //System.out.println(chars);
+        }
+        return chars;
+    }
+
+    char[] moveChars(char[] chars, int start) {
+        // Helper function to move characters over two spaces when space is detected
+        int end = chars.length - 1;
+        while (end != start + 2) {
+            chars[end] = chars[end - 2];
+            end --;
+        }
+        return chars;
     }
 }

@@ -12,6 +12,8 @@ package arraystring;
  */
 class _01_04_PalindromePermutation {
     boolean check(String s) {
-        throw new UnsupportedOperationException();
+
+
+
     }
 }
